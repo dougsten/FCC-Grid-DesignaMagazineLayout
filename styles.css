@@ -1,0 +1,9 @@
+.magazine-cover {
+  display: grid;
+  grid-template-areas: 1fr 1fr 1fr;
+}
+
+.title {
+  display: grid;
+  grid-column: 1 / 4;
+}
