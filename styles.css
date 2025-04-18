@@ -3,10 +3,10 @@ main {
   box-sizing: border-box;
 }
 
-main {
+.magazine-cover {
   display: grid;
   text-align: center;
-  grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-end];
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
   grid-template-rows: auto 1fr 1fr;
   grid-template-areas: 
@@ -54,7 +54,7 @@ p {
 }
 
 @media screen and (max-width: 900px) {
-  main {
+  .magazine-cover {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr 1fr 1fr 1fr;
     grid-template-areas: 
