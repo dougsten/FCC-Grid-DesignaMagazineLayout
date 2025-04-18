@@ -1,9 +1,67 @@
-.magazine-cover {
+main {
+  height: auto;
+  box-sizing: border-box;
+}
+
+main {
   display: grid;
-  grid-template-areas: 1fr 1fr 1fr;
+  text-align: center;
+  grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-end];
+  gap: 5px;
+  grid-template-rows: auto 1fr 1fr;
+  grid-template-areas: 
+  "title title title"
+  "feature feature photo"
+  "small-1 small-2 photo";
 }
 
 .title {
-  display: grid;
-  grid-column: 1 / 4;
+  grid-area: title;
+  background-color: black;
+}
+
+#feature {
+  grid-area: feature;
+  background-color: lightblue;
+  min-width: 500px;
+}
+
+#small-1 {
+  grid-area: small-1;
+  background-color: pink;
+  
+}
+
+#small-2 {
+  grid-area: small-2;
+  background-color: lightgreen;
+}
+
+#photo {
+  grid-area: photo;
+  min-width: 280px;
+  margin-bottom: -5px;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  text-align: left;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "title title"
+      "feature feature"
+      "small-1 small-2"
+      "photo photo"
+      "photo photo";
+  }
 }
