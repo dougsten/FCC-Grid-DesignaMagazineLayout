@@ -7,40 +7,44 @@ main {
   display: grid;
   text-align: center;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5px;
+  gap: 10px;
   grid-template-rows: auto 1fr 1fr;
   grid-template-areas: 
   "title title title"
-  "feature feature photo"
-  "small-1 small-2 photo";
+  "feature-article feature-article cover-image"
+  "small-article1 small-article2 cover-image";
 }
 
 .title {
+  display: grid;
   grid-area: title;
   background-color: black;
 }
 
-#feature {
-  grid-area: feature;
+.feature-article {
+  display: grid;
+  grid-area: feature-article;
   background-color: lightblue;
   min-width: 500px;
 }
 
-#small-1 {
-  grid-area: small-1;
+.small-article1 {
+  display: grid;
+  grid-area: small-article1;
   background-color: pink;
   
 }
 
-#small-2 {
-  grid-area: small-2;
+.small-article2 {
+  display: grid;
+  grid-area: small-article2;
   background-color: lightgreen;
 }
 
-#photo {
-  grid-area: photo;
-  min-width: 280px;
-  margin-bottom: -5px;
+.cover-image {
+  display: grid;
+  grid-area: cover-image;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -56,12 +60,16 @@ p {
 @media screen and (max-width: 900px) {
   .magazine-cover {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr 1fr;
     grid-template-areas: 
       "title title"
-      "feature feature"
-      "small-1 small-2"
-      "photo photo"
-      "photo photo";
+      "feature-article feature-article"
+      "small-article1 small-article2"
+      "cover-image cover-image"
+      "cover-image cover-image";
+  }
+  .cover-image {
+  max-width: 312px;
+  margin: auto;
   }
 }
